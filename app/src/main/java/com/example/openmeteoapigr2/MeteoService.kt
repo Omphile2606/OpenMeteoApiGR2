@@ -8,10 +8,10 @@ interface MeteoService {
 
     @GET("/v1/forecast")
     suspend fun getWeather(
-        @Query ("latitude") lat : Double,
-        @Query ("longitude") lon : Double,
-        @Query ("hourly") hourly : String = "temperature_2m",
-        @Query ("timezone") tz : String = "auto")
-    : MeteoResponse
-
+        @Query("latitude") lat: Double,
+        @Query("longitude") lon: Double,
+        @Query("hourly") hourly: String =
+            "temperature_2m,weather_code",
+        @Query("timezone") tz: String = "auto"
+    ): MeteoResponse
 }
